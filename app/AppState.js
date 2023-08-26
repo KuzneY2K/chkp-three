@@ -7,6 +7,9 @@ import { Jot } from "./models/Jot.js"
 class ObservableAppState extends EventEmitter {
   page = ''
 
+
+  jots = loadState('jots', [Jot])
+
   /** @type {import('./models/Value.js').Value[]} */
   values = loadState('values', [Value])
 
@@ -17,20 +20,22 @@ class ObservableAppState extends EventEmitter {
 
   }
 
-  jots = [
-    new Jot
-      ({
-        name: 'My first Jot',
-        color: '#333',
-        mytext: 'This is my very first Jot. I am so excited for death by powerpoint.'
-      }),
-    new Jot
-      ({
-        name: 'Select colors?',
-        color: '#627777',
-        mytext: 'Yoooooo I can selecta da colar if I click on the color picker?? 🤯'
-      })
-  ]
+  // moved to loadState, its all good meow
+
+  // jots = [
+  //   new Jot
+  //     ({
+  //       name: 'My first Jot',
+  //       color: '#333',
+  //       mytext: 'This is my very first Jot. I am so excited for death by powerpoint.'
+  //     }),
+  //   new Jot
+  //     ({
+  //       name: 'Select colors?',
+  //       color: '#627777',
+  //       mytext: 'Yoooooo I can selecta da colar if I click on the color picker?? 🤯'
+  //     })
+  // ]
 
 }
 
