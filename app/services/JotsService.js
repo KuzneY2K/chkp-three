@@ -13,6 +13,10 @@ class JotsService {
         let foundJot = AppState.jots.find(jot => jot.name == jotName)
         AppState.activeJot = foundJot
         let jotTextArea = document.getElementById('jotTextArea')
+        jotTextArea.style.color = AppState.activeJot.color
+        // jotTextArea.style.backgroundColor = '#DCE9DB'
+        jotTextArea.style.backgroundImage = "url('https://img.freepik.com/premium-photo/white-crumpled-lined-paper-background_53876-150112.jpg')"
+        jotTextArea.style.backgroundSize = "cover"
         jotTextArea.innerHTML = foundJot.mytext
         const jotBg = document.getElementsByClassName('jot-bg')[0]
         jotBg.style.background = foundJot.color
@@ -42,6 +46,7 @@ class JotsService {
 
     editJot() {
         AppState.activeJot.mytext = document.getElementById('jotTextArea').value
+        // DATE STUFF
         let date = new Date()
         // MM DD YY TIME
         let day = date.getDate()
@@ -51,13 +56,13 @@ class JotsService {
         // HOUR & CONVERSION
         let min = date.getMinutes()
         let hour = date.getHours()
+        // TIME CONVERSION
         if (hour >= 13) {
             hour = hour - 12 + `:${min} PM`
         } else {
             hour = hour + `:${min} AM`
         }
         AppState.activeJot.updated = `${fullDate} @ ${hour}`
-        console.log(AppState.activeJot)
         _saveJots()
     }
 

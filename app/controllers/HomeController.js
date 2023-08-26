@@ -87,8 +87,8 @@ export class HomeController {
   editJot() {
     window.event.preventDefault()
     let updateTime = document.getElementById('updated-item')
-    updateTime.innerHTML = AppState.activeJot.updated
     jotsService.editJot()
+    updateTime.innerHTML = AppState.activeJot.updated
   }
 
   deleteJot(jotId) {

@@ -4,7 +4,7 @@ export const HomeView = /*HTML*/ `  <main class="container-fluid p-0 m-0">
     <!-- Main Content -->
     <section class="row p-0 m-0 main-row">
       <div class="col-12 p-0 m-0 bg-primary bg-gradient">
-        <section class="row p-0 m-0 note-container-row p-5 mt-5">
+        <section class="row m-0 note-container-row p-3 p-md-5 mt-5">
           <div class="col-12 col-md-3 offset-md-1 note-info rounded bg-primary bg-opacity-25 shadow border border-3 border-light">
             <!-- jot title -->
             <h3 class="p-0 m-0 my-3 text-light jot-title fs-2" id="jot-title">You should make a jot..</h3>
@@ -19,14 +19,14 @@ export const HomeView = /*HTML*/ `  <main class="container-fluid p-0 m-0">
               <span id="word-char-track" class="mb-2 text-light"><i class="mdi mdi-file-word"></i> Total Characters: <span id="jotTextAreaSpan"></span></span>
             </div>
           </div>
-          <div class="col-12 col-md-7 rounded bg-opacity-25 text-center shadow jot-bg">
+          <div class="col-12 col-md-7 rounded border border-3 bg-opacity-25 text-center shadow jot-bg">
             <h2 class="p-0 m-0 my-3 jot-title text-light"><span><i class="mdi mdi-pen"></i></span> Jot Something Down... <span><i
                   class="mdi mdi-file"></i></span></h2>
             <!-- text area -->
             <form onsubmit="app.HomeController.editJot()">
             <textarea name="jotTextArea" placeholder="Write something down..." id="jotTextArea" name="content" cols="95" rows="16" class="m-0 p-0 shadow form-control" onkeydown="app.HomeController.updateWordCount()"></textarea>
             <div class="save-btn-container d-flex justify-content-center">
-              <button class="btn btn-primary mt-3 mb-3 save-jot-btn">Save Jot</button>
+              <button class="btn btn-dark mt-3 mb-3 save-jot-btn">Save Jot</button>
               </form>
             </div>
           </div>
@@ -35,7 +35,7 @@ export const HomeView = /*HTML*/ `  <main class="container-fluid p-0 m-0">
     </section>
     <!-- Off Canvas -->
     <!-- Button -->
-    <button class="btn btn-primary position-absolute mt-3 ms-3 myjots-btn" type="button" data-bs-toggle="offcanvas"
+    <button class="btn btn-dark position-absolute mt-3 ms-3 myjots-btn" type="button" data-bs-toggle="offcanvas"
       data-bs-target="#jotOffCanvas" aria-controls="jotOffCanvas" id="myjots-btn">
       MY JOTS
     </button>
