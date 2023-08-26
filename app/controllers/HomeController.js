@@ -38,12 +38,27 @@ function _checkCreated() {
 // Public
 export class HomeController {
   constructor() {
+    setInterval((function () {
+      if (AppState.activeJot == null) {
+        console.log('no active')
+      } else {
+        let wordCount = document.getElementById('jotTextAreaSpan')
+        wordCount.innerHTML = AppState.activeJot.chars
+        jotsService.updateWordCount()
+      }
+    }), 1000)
     document.getElementById('color').value = '#008F8C'
     const noteNameField = document.getElementById('jot-name-input')
     noteNameField.maxLength = 15
     _drawJots()
     _checkActive()
     _checkCreated()
+  }
+
+  updateWordCount() {
+    let wordCount = document.getElementById('jotTextAreaSpan')
+    wordCount.innerHTML = AppState.activeJot.chars
+    jotsService.updateWordCount()
   }
 
   setActiveJot(jotName) {
@@ -71,6 +86,5 @@ export class HomeController {
     _drawJots()
     _checkCreated()
   }
-
 
 }

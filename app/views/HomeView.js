@@ -7,7 +7,7 @@ export const HomeView = /*HTML*/ `  <main class="container-fluid p-0 m-0">
         <section class="row p-0 m-0 note-container-row p-5 mt-5">
           <div class="col-12 col-md-3 offset-md-1 note-info rounded bg-primary bg-opacity-25 shadow border border-3 border-light">
             <!-- jot title -->
-            <h3 class="p-0 m-0 my-3 text-light jot-title">PLACEHOLDER TITLE</h3>
+            <h3 class="p-0 m-0 my-3 text-light jot-title fs-2" id="jot-title">You should make a jot..</h3>
             <div class="vitals-tracker d-flex flex-column align-items-start">
               <!-- created time stamp -->
               <span id="created-time" class="mb-2 text-light"><span><i class="mdi mdi-pen-plus"></i></span>
@@ -18,8 +18,7 @@ export const HomeView = /*HTML*/ `  <main class="container-fluid p-0 m-0">
               <span id="updated-item" class="mb-2 text-light">Time Stamp Updated At <i
                   class="mdi mdi-reload"></i></span>
               <!-- word / char counter -->
-              <span id="word-char-track" class="mb-2 text-light"><i class="mdi mdi-file-word"></i> Word/Character
-                Counter</span>
+              <span id="word-char-track" class="mb-2 text-light"><i class="mdi mdi-file-word"></i> Total Characters: <span id="jotTextAreaSpan"></span></span>
             </div>
           </div>
           <div class="col-12 col-md-7 rounded bg-opacity-25 text-center shadow jot-bg">
@@ -27,9 +26,9 @@ export const HomeView = /*HTML*/ `  <main class="container-fluid p-0 m-0">
                   class="mdi mdi-file"></i></span></h2>
             <!-- text area -->
             <form onsubmit="app.HomeController.editJot()">
-            <textarea name="jotTextArea" placeholder="Type here...." id="jotTextArea" name="content" cols="95" rows="16" class="m-0 p-0 shadow form-control"></textarea>
+            <textarea name="jotTextArea" placeholder="You must create a Jot before you can use this..." id="jotTextArea" name="content" cols="95" rows="16" class="m-0 p-0 shadow form-control" onkeydown="app.HomeController.updateWordCount()"></textarea>
             <div class="save-btn-container d-flex justify-content-center">
-              <button class="btn btn-primary mt-3 save-jot-btn">Save Jot</button>
+              <button class="btn btn-primary mt-3 mb-3 save-jot-btn">Save Jot</button>
               </form>
             </div>
           </div>

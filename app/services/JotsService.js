@@ -18,6 +18,14 @@ class JotsService {
         jotBg.style.background = foundJot.color
         document.getElementById('jotTextArea').value = AppState.activeJot.mytext
         _saveJots()
+        let jotTitle = document.getElementById('jot-title')
+        jotTitle.innerHTML = AppState.activeJot.name
+    }
+
+    updateWordCount() {
+        let textAreaone = document.getElementById('jotTextArea')
+        AppState.activeJot.chars = textAreaone.value.length
+        _saveJots()
     }
 
     createJot(formData) {

@@ -6,6 +6,7 @@ export class Jot {
         this.name = data.name
         this.color = data.color
         this.mytext = data.mytext
+        this.chars = data.chars
     }
 
     get JotCardTemplate() {
