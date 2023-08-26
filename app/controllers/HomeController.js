@@ -22,7 +22,11 @@ function _checkActive() {
     textArea.disabled = false
   }
   if (textArea.innerHTML === 'undefined') {
-    textArea.value = ' '
+    textArea.value = null
+  }
+  let updateTime = document.getElementById('updated-item')
+  if (updateTime.innerHTML === 'undefined') {
+    updateTime.innerHTML = 'time?'
   }
 }
 
@@ -64,6 +68,10 @@ export class HomeController {
   setActiveJot(jotName) {
     jotsService.setActiveJot(jotName)
     console.log(AppState.activeJot)
+    let createTime = document.getElementById('created-time')
+    createTime.innerHTML = AppState.activeJot.mydate
+    let updateTime = document.getElementById('updated-item')
+    updateTime.innerHTML = AppState.activeJot.updated
     _checkActive()
   }
 
@@ -78,6 +86,8 @@ export class HomeController {
 
   editJot() {
     window.event.preventDefault()
+    let updateTime = document.getElementById('updated-item')
+    updateTime.innerHTML = AppState.activeJot.updated
     jotsService.editJot()
   }
 
@@ -88,3 +98,11 @@ export class HomeController {
   }
 
 }
+
+// const date = new Date()
+// let day = date.getDate()
+// let month = date.getMonth() + 1
+// let year = date.getFullYear()
+// let fullDate = `${month} ${day} ${year}`
+// AppState.activeJot.date = fullDate
+// console.log(fullDate)

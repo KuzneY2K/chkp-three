@@ -29,18 +29,39 @@ class JotsService {
     }
 
     createJot(formData) {
+        let date = new Date()
+        let day = date.getDate()
+        let month = date.getMonth() + 1
+        let year = date.getFullYear()
+        let fullDate = `${month}/${day}/${year}`
         let newJot = new Jot(formData)
+        newJot.mydate = fullDate
         AppState.jots.push(newJot)
         _saveJots()
     }
 
     editJot() {
         AppState.activeJot.mytext = document.getElementById('jotTextArea').value
+        let date = new Date()
+        // MM DD YY TIME
+        let day = date.getDate()
+        let month = date.getMonth() + 1
+        let year = date.getFullYear()
+        let fullDate = `${month}/${day}/${year}`
+        // HOUR & CONVERSION
+        let min = date.getMinutes()
+        let hour = date.getHours()
+        if (hour >= 13) {
+            hour = hour - 12 + `:${min} PM`
+        } else {
+            hour = hour + `:${min} AM`
+        }
+        AppState.activeJot.updated = `${fullDate} @ ${hour}`
+        console.log(AppState.activeJot)
         _saveJots()
     }
 
     deleteJot(jotId) {
-        let foundJots = AppState.jots.find(jot => jot.id == jotId)
         let filteredJots = AppState.jots.filter(jot => jot.id != jotId)
         AppState.jots = filteredJots
         _saveJots()

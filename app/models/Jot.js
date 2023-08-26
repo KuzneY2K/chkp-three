@@ -7,6 +7,8 @@ export class Jot {
         this.color = data.color
         this.mytext = data.mytext
         this.chars = data.chars
+        this.mydate = data.mydate
+        this.updated = data.updated
     }
 
     get JotCardTemplate() {
