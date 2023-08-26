@@ -52,9 +52,11 @@ export const HomeView = /*HTML*/ `  <main class="container-fluid p-0 m-0">
                                 placeholder="JOT NAME" class="form-control" name="name" id='jot-name-input' required>
                         <div class="d-flex flex-row">
                             <button class="btn btn-danger" input type="submit">Create New Jot</button><input type="color" name="color" id="color" class="m-auto p-0" list="presets"><datalist id="presets">
-  <option value="#0FC2C0">Definitely Teal.</option>
-  <option value="#008F8C">Tealish?</option>
-  <option value="#023535">Abyss</option>
+  <option value="#4BB2F2"></option>
+  <option value="#80C7F2"></option>
+  <option value="#A7D5F2"></option>
+  <option value="#3C5159"></option>
+  <option value="#A7DDF2"></option>
 </datalist> <label for="color" class="m-auto p-0">Choose Color</label>
                                 </div>
                     </form>

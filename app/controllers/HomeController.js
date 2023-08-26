@@ -26,7 +26,7 @@ function _checkActive() {
   }
   let updateTime = document.getElementById('updated-item')
   if (updateTime.innerHTML === 'undefined') {
-    updateTime.innerHTML = 'time?'
+    updateTime.innerHTML = 'not yet.'
   }
 }
 
@@ -51,7 +51,7 @@ export class HomeController {
         jotsService.updateWordCount()
       }
     }), 1000)
-    document.getElementById('color').value = '#008F8C'
+    document.getElementById('color').value = '#3C5159'
     const noteNameField = document.getElementById('jot-name-input')
     noteNameField.maxLength = 15
     _drawJots()
@@ -92,9 +92,14 @@ export class HomeController {
   }
 
   deleteJot(jotId) {
-    jotsService.deleteJot(jotId)
-    _drawJots()
-    _checkCreated()
+    if (confirm("Click OK to delete Jot.") == true) {
+      jotsService.deleteJot(jotId)
+      _drawJots()
+      _checkCreated()
+      alert('Jot deleted.')
+    } else {
+      alert('Jot deletion canceled.')
+    }
   }
 
 }
