@@ -14,9 +14,16 @@ class JotsService {
         AppState.activeJot = foundJot
         let jotTextArea = document.getElementById('jotTextArea')
         jotTextArea.style.color = AppState.activeJot.color
-        // jotTextArea.style.backgroundColor = '#DCE9DB'
-        jotTextArea.style.backgroundImage = "url('https://img.freepik.com/premium-photo/white-crumpled-lined-paper-background_53876-150112.jpg')"
+        // Cool idea but didnt work out
+        // if (AppState.activeJot.check == "on") {
+        //     jotTextArea.style.backgroundImage = "url('https://www.textures4photoshop.com/tex/thumbs/wrinkled-lined-paper-with-grunge-effect-free-texture-thumb52.jpg')"
+        // } else {
+        //     jotTextArea.style.backgroundImage = ''
+        // }
+        jotTextArea.style.backgroundColor = '#DCE9DB'
+        jotTextArea.style.fontWeight = "600"
         jotTextArea.style.backgroundSize = "cover"
+        jotTextArea.style.fontSize = "1.2rem"
         jotTextArea.innerHTML = foundJot.mytext
         const jotBg = document.getElementsByClassName('jot-bg')[0]
         jotBg.style.background = foundJot.color
@@ -43,6 +50,7 @@ class JotsService {
         AppState.jots.push(newJot)
         _saveJots()
     }
+
 
     editJot() {
         AppState.activeJot.mytext = document.getElementById('jotTextArea').value

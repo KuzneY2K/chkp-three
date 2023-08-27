@@ -42,6 +42,7 @@ function _checkCreated() {
 // Public
 export class HomeController {
   constructor() {
+    jotTextArea.style.backgroundColor = '#DCE9DB'
     setInterval((function () {
       if (AppState.activeJot == null) {
         console.log('no active')
@@ -51,7 +52,7 @@ export class HomeController {
         jotsService.updateWordCount()
       }
     }), 1000)
-    document.getElementById('color').value = '#3C5159'
+    document.getElementById('color').value = '#00EDBF'
     const noteNameField = document.getElementById('jot-name-input')
     noteNameField.maxLength = 15
     _drawJots()

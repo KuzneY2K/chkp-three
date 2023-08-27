@@ -9,6 +9,7 @@ export class Jot {
         this.chars = data.chars
         this.mydate = data.mydate
         this.updated = data.updated
+        this.check = data.check
     }
 
     get JotCardTemplate() {

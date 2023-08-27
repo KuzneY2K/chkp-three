@@ -48,17 +48,22 @@ export const HomeView = /*HTML*/ `  <main class="container-fluid p-0 m-0">
             <div class="offcanvas-body">
                 <div class="p-0 m-0">
                     <form onsubmit="app.HomeController.createJot()">
+  <input class="form-check-input opacity-0" type="checkbox" name="check" id="flexCheckDefault">
+  <label class="form-check-label opacity-0" for="flexCheckDefault">
+    Check me for paper background 🤯🤯
+  </label>
                     <input type="text"
                                 placeholder="JOT NAME" class="form-control" name="name" id='jot-name-input' required>
                         <div class="d-flex flex-row">
-                            <button class="btn btn-danger" input type="submit">Create New Jot</button><input type="color" name="color" id="color" class="m-auto p-0" list="presets"><datalist id="presets">
-  <option value="#4BB2F2"></option>
-  <option value="#80C7F2"></option>
-  <option value="#A7D5F2"></option>
-  <option value="#3C5159"></option>
-  <option value="#A7DDF2"></option>
-</datalist> <label for="color" class="m-auto p-0">Choose Color</label>
+                            <button class="btn btn-danger mt-2" input type="submit">Create New Jot</button><input type="color" name="color" id="color" class="m-auto p-0" list="presets"><datalist id="presets">
+  <option value="#F36299"></option>
+  <option value="#019EBF"></option>
+  <option value="#02A43C"></option>
+  <option value="#D2D803"></option>
+  <option value="#F0774D"></option>
+</datalist> <label for="color" class="m-auto p-0">Font Colors</label>
                                 </div>
+                
                     </form>
                 <ul class="mt-5 p-0 m-0 jot-list"></ul>
                 </ul>
