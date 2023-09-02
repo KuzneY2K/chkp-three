@@ -62,7 +62,7 @@ class JotsService {
         let year = date.getFullYear()
         let fullDate = `${month}/${day}/${year}`
         // HOUR & CONVERSION
-        let min = date.getMinutes()
+        const min = String(date.getMinutes()).padStart(2, '0');
         let hour = date.getHours()
         // TIME CONVERSION
         if (hour >= 13) {

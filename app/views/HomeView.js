@@ -10,13 +10,13 @@ export const HomeView = /*HTML*/ `  <main class="container-fluid p-0 m-0">
             <h3 class="p-0 m-0 my-3 text-light jot-title fs-2" id="jot-title">You should make a jot..</h3>
             <div class="vitals-tracker d-flex flex-column align-items-start">
               <!-- created time stamp -->
-              <span class="mb-2 text-light"><span><i class="mdi mdi-pen-plus"></i></span>
+              <span class="mb-2 text-light" style="font-size: 1.1rem;"><span><i class="mdi mdi-pen-plus"></i></span>
                 Jot created at: <span id="created-time"></span></span>
               <!-- updated time stamp -->
-              <span class="mb-2 text-light">Updated: <span id="updated-item"></span> <i
+              <span class="mb-2 text-light" style="font-size: 1.1rem;">Updated: <span id="updated-item"></span> <i
                   class="mdi mdi-reload"></i></span>
               <!-- word / char counter -->
-              <span id="word-char-track" class="mb-2 text-light"><i class="mdi mdi-file-word"></i> Total Characters: <span id="jotTextAreaSpan"></span></span>
+              <span id="word-char-track" class="mb-2 text-light" style="font-size: 1.1rem;"><i class="mdi mdi-file-word"></i> Total Characters: <span id="jotTextAreaSpan"></span></span>
             </div>
           </div>
           <div class="col-12 col-md-7 rounded border border-3 bg-opacity-25 text-center shadow jot-bg">
